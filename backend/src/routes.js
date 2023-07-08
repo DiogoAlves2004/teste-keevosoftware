@@ -5,18 +5,24 @@ const ProductController = require('./controllers/ProductController')
 const routes = express.Router();
 
 routes.get('/', (req, res, next)=> {
-    return res.json({ hello: 'World'})
+    return res.json({ 
+
+        routes : {
+            products: "/api/products"
+        }
+
+    })
 })
 
-routes.get('/products', ProductController.index)
+routes.get('/api/products', ProductController.index)
 
-routes.get('/products/:id', ProductController.getOne)
+routes.get('/api/products/:id', ProductController.getOne)
 
-routes.post('/products', ProductController.store)
+routes.post('/api/products/', ProductController.store)
 
-routes.patch('/products/:id', ProductController.attSore)
+routes.patch('/api/products/', ProductController.attSore)
 
-routes.delete('/products/:id', ProductController.deleteOne)
+routes.delete('/api/products/:id', ProductController.deleteOne)
 
 
 module.exports = routes;

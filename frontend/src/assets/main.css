@@ -1,0 +1,18 @@
+@import './base.css';
+
+@font-face {
+  font-family: Baloo;
+  src: url(../assets/Baloo-Regular.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Baloo;
+}
+
+#app{
+  overflow-x: hidden;
+}

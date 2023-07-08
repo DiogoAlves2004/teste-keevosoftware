@@ -54,8 +54,10 @@ module.exports = {
     },
 
     async attSore(req, res){
-        const{ name, description, quantity, metricunit } = req.body;
-        const { id } = req.params
+        const{ name, description, quantity, metricunit, id } = req.body;
+
+
+        console.log(id)
 
         const product = await Product.update({
             name: name,
