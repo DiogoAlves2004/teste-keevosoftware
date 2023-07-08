@@ -22,7 +22,7 @@
 
                 Product.post(this.product).then(res => {
                     alert('Produto salvo com Sucesso!')
-    
+
                     this.$router.push('/products')
                     this.errors = []
     
@@ -49,16 +49,16 @@
 
     <form @submit.prevent="post" ref="anyName"> 
         <section class="section1">
-            <input class="name" type="text" placeholder="Nome" v-model="product.name" required/>
+            <input class="name" type="text" placeholder="Nome" name="name" v-model="product.name" required/>
             
-            <textarea class="text-area" placeholder="Uma breve descrição..." v-model="product.description" required />
+            <textarea class="text-area" placeholder="Uma breve descrição..." name="description" v-model="product.description" required />
         </section>
 
         <section class="section2">
             <div>
-                <input class="quantity" type="number" min="0" placeholder="Quantidade inicial" v-model="product.quantity" required />
+                <input class="quantity" type="number" min="0" name="quantity" placeholder="Quantidade inicial" v-model="product.quantity" required />
     
-                <select class="metric-unit" placeholder="Quantidade inicial" v-model="product.metricunit" required >
+                <select name="metricunit" class="metric-unit" placeholder="Quantidade inicial" v-model="product.metricunit" required >
                     <option value="" class="void-option" disabled hidden selected>Unidade de Medida...</option>
                     <option value="unid" >Unidade</option>
                     <option value="m" >Metro</option>

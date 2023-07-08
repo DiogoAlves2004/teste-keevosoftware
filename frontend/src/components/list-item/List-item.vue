@@ -41,12 +41,7 @@
 
 </script>
 
-<template>
-
-    
-    
-    
-    
+<template>  
     
     <div class="modal" v-show="sowModal">
         <form @submit.prevent="patch(id)" class="modal-form">
@@ -112,7 +107,6 @@
                 
         </form>
     </div>
-
     <li v-show="!sowModal" class="list-item">
 
         <h2 class="name"> {{ name }}</h2>
@@ -130,6 +124,7 @@
             </svg>
         </button>
     </li>
+
 </template>
 
 <style scoped>
