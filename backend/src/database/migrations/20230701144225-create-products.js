@@ -27,6 +27,11 @@ module.exports = {
         allowNull: false,
       },
 
+      code: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+
       metricunit: {
         type: Sequelize.STRING,
       },

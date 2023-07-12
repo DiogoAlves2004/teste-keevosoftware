@@ -8,9 +8,11 @@
             product: {
                 name: '',
                 quantity: '',
+                code: '',
                 description: '',
                 metricunit: ''
             },
+            modalSuccess: false,
             errors:[]
         }
     },
@@ -20,15 +22,17 @@
     methods: {
         post(){
 
+            
                 Product.post(this.product).then(res => {
                     alert('Produto salvo com Sucesso!')
-
-                    this.$router.push('/products')
+                    this.$router.push('/')
                     this.errors = []
-    
-                }).catch((e)=>{
+                })
+                .catch((e)=>{
                     this.errors = e.response.data.errors
                 })
+
+                
 
         }
     }
@@ -57,8 +61,10 @@
         <section class="section2">
             <div>
                 <input class="quantity" type="number" min="0" name="quantity" placeholder="Quantidade inicial" v-model="product.quantity" required />
+
+                <input class="quantity" type="number" min="0" name="code" placeholder="Codigo" v-model="product.code" required />
     
-                <select name="metricunit" class="metric-unit" placeholder="Quantidade inicial" v-model="product.metricunit" required >
+                <select name="metricunit" class="metric-unit" v-model="product.metricunit" required >
                     <option value="" class="void-option" disabled hidden selected>Unidade de Medida...</option>
                     <option value="unid" >Unidade</option>
                     <option value="m" >Metro</option>
@@ -142,7 +148,7 @@
         background: none;
     }
     .quantity{
-        width: 30vw;
+        width: 15vw;
         
         border-radius: 30px;
         padding: 0.5rem 1.5rem;
@@ -174,7 +180,22 @@
         background: none;
         color: #4AF947;
         cursor: pointer;
+        
     }
+    .submit-button,
+    .trash-button{
+        transition: all ease-in 0.2s;
+    }
+    .submit-button:hover,
+    .submit-button:active,
+    .trash-button:hover,
+    .trash-button:active{
+        
+        transform: scale(1.1);
+    }
+
+
+
     .trash-button{
         width: 25%;
         color: #E7271B;

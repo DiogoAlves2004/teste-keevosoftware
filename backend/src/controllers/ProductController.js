@@ -22,13 +22,16 @@ module.exports = {
     },
     
     async store(req, res){
-        const{ name, description, quantity, metricunit } = req.body;
+        const{ name, description, quantity, metricunit, code } = req.body;
+
+        
 
         const product = await Product.create({
             name: name,
             description: description,
             metricunit: metricunit,
             quantity: quantity,
+            code: code
     
         })
 
@@ -54,7 +57,7 @@ module.exports = {
     },
 
     async attSore(req, res){
-        const{ name, description, quantity, metricunit, id } = req.body;
+        const{ name, description, quantity, metricunit, id, code } = req.body;
 
 
         console.log(id)
@@ -64,6 +67,7 @@ module.exports = {
             description: description,
             metricunit: metricunit,
             quantity: quantity,
+            code: code
     
         },
         {

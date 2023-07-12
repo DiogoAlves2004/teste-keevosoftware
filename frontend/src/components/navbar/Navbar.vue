@@ -16,9 +16,9 @@
                 <img alt="Vue logo" class="logo" src="@/assets/LOGOMARCA.png" width="125" height="125" />
             <nav>
                 <div class="navLinks">
-                    <RouterLink to="/products">Produtos</RouterLink>
-                    <RouterLink to="/products/register">Cadastro</RouterLink>
-                    <RouterLink to="/comingsoon">Coming Soon</RouterLink>
+                    <RouterLink class="link" to="/">Produtos</RouterLink>
+                    <RouterLink class="link" to="/register">Cadastro</RouterLink>
+                    <RouterLink class="link" to="/comingsoon">Coming Soon</RouterLink>
                 </div>
             </nav>
         </div>
@@ -52,6 +52,12 @@
         position: absolute;
         right: 5rem;
 
+    }
+    .link:hover{
+        transition: all ease-in 0.2s;
+    }
+    .link:hover{
+        transform: scale(1.1);
     }
     .logo{
         transform: scale(1.5);

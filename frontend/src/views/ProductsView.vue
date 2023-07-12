@@ -96,10 +96,15 @@
       
                   <div class="modal-rigth-content">
       
+                    <h2 class="code-title">Codigo do item:</h2> 
+                    <input class="modal-code-input" required  v-model="modalProduct.code" type="number" />  
+
                       <h1 class="modal-quantity"> 
                           
 
                               <input class="modal-quantity-input" required  v-model="modalProduct.quantity" type="number" />  
+
+
           
 
                               {{ modalProduct.metricunit }}
@@ -138,12 +143,29 @@
 
 
 
-      <ul class="list"   v-for="product of products" :key="product.id">
+
+      <ul class="list" >
 
         <li v-show="!sowModal" class="list-item">
 
+            <h2 class="name"> Nome </h2>
+            <h2 > Codigo </h2>
+
+            <h3 class="description"> Descrição </h3>
+
+            <h3 class="quantity"> Quantidade </h3>
+
+        </li>
+    </ul>
+
+
+
+      <ul class="list"  >
+
+        <li  v-for="product of products" :key="product.id" v-show="!sowModal" class="list-item">
+
             <h2 class="name"> {{ product.name }}</h2>
-            <h2 > {{ product.id }}</h2>
+            <h2 > {{ product.code }} </h2>
 
             <h3 class="description">{{ product.description }}</h3>
 
@@ -157,8 +179,6 @@
                 </svg>
             </button>
         </li>
-
-
       </ul>
 
     </div>
@@ -168,6 +188,14 @@
 
 <style scoped>
 
+.modal-code-input{
+    background: none;
+        border: none;
+        color: #fff;
+        font-size: 1rem;
+        width: 50%;
+        text-align: center;
+}
   .title{
     color: #fff;
     font-size: 2.5rem;
@@ -177,7 +205,9 @@
   .list{
         width: 100vw;
     }
-
+    .code-title{
+        color: #fff;
+    }
 
 
 
@@ -195,6 +225,13 @@
         background: none;
         color: #4AF947;
         cursor: pointer;
+        margin-bottom: 1rem;
+        transition: all ease-in 0.2s;
+    }
+
+    .submit-button:hover,
+    .submit-button:active{
+        transform: scale(1.1);
     }
     .modal{
         background: rgba(0.2, 0.2, 0.2, 0.3);
@@ -223,6 +260,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 1rem;
     }
     .modal-quantity-input{
         background: none;
@@ -266,6 +304,7 @@
         border: none;
         top: 20px;
         right: -20px;
+        cursor: pointer;
     }
     .modal-form{
         width: 100%;
@@ -285,6 +324,12 @@
         padding: 0.3rem 0.1rem;
         border-radius: 50px;
         cursor: pointer;
+        transition: all ease-in 0.2s;
+    }
+
+    .trash-button:hover,
+    .trash-button:active{
+        transform: scale(1.1);
     }
 
     .edit-button{
@@ -292,6 +337,11 @@
         width: max-content;
         border: none;
         cursor: pointer;
+        transition: all ease-in 0.2s;
+    }
+    .edit-button:hover,
+    .edit-button:active{
+        transform: scale(1.1);
     }
     .list-item{
         display: grid;
@@ -304,7 +354,7 @@
         align-items: center;
         color: #fff;
         font-size: 1.2rem;
-        padding-bottom: 0.5rem;
+        padding: 0.5rem;
         text-align: center;
     }
     .name{

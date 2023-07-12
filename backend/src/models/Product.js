@@ -6,7 +6,8 @@ class Product extends Model{
         super.init({
             name: DataTypes.STRING,
             description: DataTypes.TEXT,
-            quantity: DataTypes.INTEGER,    
+            quantity: DataTypes.INTEGER,
+            code: DataTypes.INTEGER,
             metricunit: DataTypes.STRING
         }, {
             sequelize: connection

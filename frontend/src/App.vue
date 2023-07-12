@@ -39,4 +39,18 @@
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
+
+.fade-enter-active,
+.fade-leave-active{
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to{
+  opacity: 0;
+}
+
+
 </style>
